@@ -1,3 +1,4 @@
-input(print("Nombre de Usuario: "))
-input(print("Clave de Usuario: "))
-sd
+print("Nombre de Usuario: ")
+input()
+print("Clave de Usuario: ")
+input()
