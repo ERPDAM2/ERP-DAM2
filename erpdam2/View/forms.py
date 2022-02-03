@@ -28,6 +28,7 @@ class LoginForm(FlaskForm):
 
 class RegisterSale(FlaskForm):
 
+    """Register Sales"""
     id_product = StringField("Id_Product", validators=[DataRequired()])
     id_provider = IntegerField("Id_Provider", validators=[DataRequired()])
     price = DecimalField("Price", validators=[DataRequired(), Length(max=8)])
