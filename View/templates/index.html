@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class='position-absolute top-50 start-50 translate-middle'>
+    <div class="card card-body">
+      <form action="{{url_for('validator')}}" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" name="user" placeholder="User">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-outline-info">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
