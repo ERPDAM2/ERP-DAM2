@@ -11,4 +11,4 @@ def register():
 
 @users.route("/login", methods=["GET", "POST"])
 def login():
-    return ""
+    return "<h1>Inicia sesión</h1>"
