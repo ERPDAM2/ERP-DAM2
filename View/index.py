@@ -15,9 +15,9 @@ def Index():
 
 @index.route('/validator', methods=['POST'])
 def validator():
-    if request.methods == 'POST'
-    user = request.form['User']
-    password = request.form['Password']
+    if request.methods == 'POST':
+        user = request.form['User']
+        password = request.form['Password']
     return redirect(url_for('Index'))
 
 @index.route('/productos')
