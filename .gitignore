@@ -128,10 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-<<<<<<< HEAD
-# Virtual Enviroment
-Pipfile
-=======
 
 .idea/
->>>>>>> modelo
