@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+    <head>
+        <title>Configuration</title>
+        <meta charset="ISO-8859-1"/>
+    </head>
+    <body>
+        <form>
+            <!-- Company configuration form -->
+            <label for="legalName">Legal Name</label>
+            <input type="text" id="legalName" name="legalName"><br>
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address"><br>
+            <label for="mainCurrency">Main Currency</label>
+            <!-- Type text provisional(?) -->
+            <input type="text" id="mainCurrency" name="mainCurrency"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+{% endblock %}
