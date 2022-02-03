@@ -4,14 +4,19 @@
 
 from flask import Flask, render_template,redirect, url_for
 
+authorized = false
+
 index = Flask(__name__)
 
 @index.route('/')
 def Index():
     return render_template('index.html')
 
-@index.route('/validator')
+@index.route('/validator', methods=['POST'])
 def validator():
+    if request.methods == 'POST'
+    user = request.form['User']
+    password = request.form['Password']
     return redirect(url_for('Index'))
 
 if __name__ == '__main__':
