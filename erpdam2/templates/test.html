@@ -1,0 +1,19 @@
+{% block title %}Register{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+<hml>
+    {% block body %}
+    <head>
+        <title>App Flask</title>
+    </head>
+    <body>
+        <form method="GET">
+            {{form.email.label}}
+            {{form.email}}
+            <br/>
+            {{form.username.label}}
+            {{form.username}}
+        </form>
+    </body>
+    {% endblock %}
+</hml>

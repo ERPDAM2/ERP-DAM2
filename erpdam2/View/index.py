@@ -2,7 +2,7 @@
 # vim: ft=python fileencoding=utf-8 sts=4 sw=4 et:
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 
 productosPlaceholder = ["Producto1", "Producto2", "Producto3", "Producto4", "Producto5"]
 
