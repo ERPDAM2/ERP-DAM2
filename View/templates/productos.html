@@ -1,13 +1,8 @@
-
-<html>
-    <head>
-        <title>Productos</title>
-    </head>
-    <body>
-        <ul>
-            {% for producto in productos %}
+{% extends "layout.html" %}
+{% block body %}
+    <ul>
+        {% for producto in productos %}
             <li>{{ producto }}</li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+        {% endfor %}
+    </ul>
+{% endblock %}
