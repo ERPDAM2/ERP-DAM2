@@ -19,5 +19,9 @@ def validator():
 def productos():
     return render_template('productos.html', productos = productosPlaceholder)
 
+@index.route('/configuration')
+def configuration():
+    return render_template('configuration.html')
+
 if __name__ == '__main__':
     index.run(port = 3000, debug = True)
