@@ -8,5 +8,5 @@
 - [x] Usuarios
 - [x] Contactos
 - [ ] Producto
-- [ ] Roles
+- [x] Roles
 - [ ] Transacciones
