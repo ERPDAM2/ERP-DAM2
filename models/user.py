@@ -7,8 +7,8 @@ from models.rol import Role
 from ..app import db, login_manager
 from flask_login import UserMixin
 
-class User(UserMixin,db.Model):
 
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -32,11 +32,16 @@ class User(UserMixin,db.Model):
 
     def verify_password(self, password):
         # Comprobamos si la clave cifrada coincide con la contraseña actual
-        return check_password_hash(self.password_hash, password)    
-        
+        return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
         return '<User: {}>'.format(self.username)
+
+    def username_exists(self) -> bool:
+        return db.session.query(User.id).filter_by(email=self.email).first() is not None
+
+    def email_exists(self) -> bool:
+        return db.session.query(User.id).filter_by(username=self.username).first() is not None
 
 
 @login_manager.user_loader
