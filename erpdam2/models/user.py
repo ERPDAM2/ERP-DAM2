@@ -13,7 +13,7 @@ class User(UserMixin, db.Model):
     first_name = db.Column(db.String(60), index=True)
     last_name = db.Column(db.String(60), index=True)
     password_hash = db.Column(db.String(128))
-    role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
+    role_id = db.Column(db.Integer, db.ForeignKey("roles.id"), nullable=False)
 
     @property
     def password(self):
@@ -34,13 +34,10 @@ class User(UserMixin, db.Model):
         return "<User: {}>".format(self.username)
 
     def username_exists(self) -> bool:
-        return db.session.query(User.id).filter_by(email=self.email).first() is not None
+        return User.filter_by(email=self.email).first() is not None
 
     def email_exists(self) -> bool:
-        return (
-            db.session.query(User.id).filter_by(username=self.username).first()
-            is not None
-        )
+        return User.filter_by(username=self.username).first() is not None
 
 
 @login_manager.user_loader
