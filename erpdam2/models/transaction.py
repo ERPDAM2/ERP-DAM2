@@ -2,20 +2,26 @@ from erpdam2 import db
 import datetime
 
 
+products = db.Table(
+    "products_transactions",
+    db.Column("product_id", db.Integer, db.ForeignKey("products.id"), primary_key=True),
+    db.Column(
+        "transaction_id", db.Integer, db.ForeignKey("transactions.id"), primary_key=True
+    ),
+)
+
+
 class Transaction(db.Model):
     __tablename__ = "transactions"
 
     id = db.Column(db.Integer, primary_key=True)
-    id_product = db.relationship(
+    products = db.relationship(
         "Product",
-        backref="purchases",
-        lazy="dynamic",
+        secondary=products,
+        lazy="subquery",
+        backref=db.backref("transactions", lazy=True),
     )
-    id_provider = db.relationship(
-        "Contact",
-        backref="purchases",
-        lazy="dynamic",
-    )
+    provider_id = db.Column(db.Integer, db.ForeignKey("contacts.id"), nullable=False)
     date = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False)
     price = db.Column(db.Float, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)

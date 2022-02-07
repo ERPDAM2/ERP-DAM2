@@ -12,6 +12,7 @@ class Contact(db.Model):
     phone_number = db.Column(db.Integer, nullable=True)
     picture = db.Column(db.String(255), nullable=True)
     address = db.Column(db.String(250), nullable=True)
+    transactions = db.relationship("Transaction", backref="contact", lazy=True)
 
     @staticmethod
     def from_company(company_name, email, phone, picture, address):
