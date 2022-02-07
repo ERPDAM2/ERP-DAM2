@@ -40,7 +40,7 @@ class User(UserMixin, db.Model):
         return User.filter_by(username=self.username).first() is not None
 
     def is_admin(self) -> bool:
-        return self.role
+        return self.role.is_admin
 
     def __init__(self, email, username, first_name, last_name, password, role_id):
         self.email = email
