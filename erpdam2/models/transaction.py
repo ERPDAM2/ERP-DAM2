@@ -18,7 +18,7 @@ class Transaction(db.Model):
     )
     date = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False)
     price = db.Column(db.Float, nullable=False)
-    quantity = db.Column(db.Integer, nullable=False, min_value=0)
+    quantity = db.Column(db.Integer, nullable=False)
     transaction_type = db.Column(db.String(8), nullable=False, default="purchase")
 
     def __init__(
