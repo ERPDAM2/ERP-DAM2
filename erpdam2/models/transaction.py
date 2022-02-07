@@ -7,10 +7,14 @@ class Transaction(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     id_product = db.relationship(
-        "Product", backref="purchases", lazy="dynamic", nullable=False
+        "Product",
+        backref="purchases",
+        lazy="dynamic",
     )
     id_provider = db.relationship(
-        "Contact", backref="purchases", lazy="dynamic", nullable=False
+        "Contact",
+        backref="purchases",
+        lazy="dynamic",
     )
     date = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False)
     price = db.Column(db.Float, nullable=False)

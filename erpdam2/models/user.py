@@ -39,6 +39,9 @@ class User(UserMixin, db.Model):
     def email_exists(self) -> bool:
         return User.filter_by(username=self.username).first() is not None
 
+    def is_admin(self) -> bool:
+        return self.role
+
 
 @login_manager.user_loader
 def load_user(user_id):
