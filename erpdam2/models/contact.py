@@ -14,9 +14,29 @@ class Contact(db.Model):
     address = db.Column(db.String(250), nullable=True)
 
     @staticmethod
-    def fromCompany():
-        return Contact()
+    def from_company(company_name, email, phone, picture, address):
+        return Contact(email, phone, picture, address, company_name=company_name)
 
     @staticmethod
-    def fromPerson():
-        return Contact()
+    def from_person(first_name, last_name, email, phone, picture, address):
+        return Contact(
+            email, phone, picture, address, first_name=first_name, last_name=last_name
+        )
+
+    def __init__(
+        self,
+        email,
+        phone,
+        picture,
+        address,
+        company_name=None,
+        first_name=None,
+        last_name=None,
+    ):
+        self.company_name = company_name
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.phone_number = phone
+        self.picture = picture
+        self.address = address
