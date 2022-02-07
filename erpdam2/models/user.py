@@ -22,9 +22,9 @@ class User(UserMixin, db.Model):
         raise AttributeError("La contraseña no es un atributo accesible.")
 
     @password.setter
-    def password(self, password):
+    def password(self, password_to_hash):
         # Convertimos la contraseña a una clave cifrada
-        self.password_hash = generate_password_hash(password)
+        self.password_hash = generate_password_hash(password_to_hash)
 
     def verify_password(self, password):
         # Comprobamos si la clave cifrada coincide con la contraseña actual
@@ -41,6 +41,14 @@ class User(UserMixin, db.Model):
 
     def is_admin(self) -> bool:
         return self.role
+
+    def __init__(self, email, username, first_name, last_name, password, role_id):
+        self.email = email
+        self.username = username
+        self.first_name = first_name
+        self.last_name = last_name
+        self.password = password
+        self.role_id = role_id
 
 
 @login_manager.user_loader
