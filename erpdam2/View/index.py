@@ -13,7 +13,7 @@ index = Flask(__name__)
 
 @index.route("/")
 def Index():
-    return render_template("templates/index.html")
+    return render_template("index.html")
 
 
 @index.route("/validator", methods=["POST"])
@@ -26,12 +26,12 @@ def validator():
 
 @index.route("/productos")
 def productos():
-    return render_template("templates/productos.html", productos=productosPlaceholder)
+    return render_template("productos.html", productos=productosPlaceholder)
 
 
 @index.route("/configuration")
 def configuration():
-    return render_template("templates/configuration.html")
+    return render_template("configuration.html")
 
 
 if __name__ == "__main__":
