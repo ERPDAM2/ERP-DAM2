@@ -8,7 +8,7 @@ class Product(db.Model):
     name = db.Column(db.String(60), unique=True, nullable=False)
     description = db.Column(db.String(200))
     quantity = db.Column(db.Integer)
-    price = db.Column(db.Float)
+    price = db.Column(db.Float, nullable=False)
     picture = db.Column(db.String(255))
     transactions = db.relationship("ProductTransaction", back_populates="product")
 
