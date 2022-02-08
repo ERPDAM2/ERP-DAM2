@@ -6,6 +6,7 @@ from erpdam2.routes.users import users
 from erpdam2.routes.products import products
 from erpdam2.routes.clients import clients
 
+
 app = Flask(__name__)
 db = SQLAlchemy(app)
 login_manager = LoginManager()

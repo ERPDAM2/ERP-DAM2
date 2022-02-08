@@ -1,6 +1,5 @@
-from turtle import title
 from flask import Blueprint, render_template, request
-from ..View.forms import RegisterForm
+from erpdam2.View.forms import RegisterForm
 
 users = Blueprint("users", __name__)
 

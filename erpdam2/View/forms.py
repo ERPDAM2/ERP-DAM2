@@ -2,6 +2,7 @@ from wsgiref import validate
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, NumberRange
+from erpdam2.models.user import User
 
 class RegisterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -14,7 +15,14 @@ class RegisterForm(FlaskForm):
                                         ])
     confirm_password = PasswordField('Confirm Password')
     submit = SubmitField('Register')
-     
+    
+    def validate_email(self, field):
+        if(User.email_exists(field.data)):
+            return ValidationError("Email already exists")
+    
+    def validate_username(self, field):
+        if(User.username_exists(field.data)):
+            return ValidationError("Username alredy exists")
 
 class LoginForm(FlaskForm):
     """
