@@ -14,6 +14,10 @@ class Role(db.Model):
     def __repr__(self):
         return "<Role: {}>".format(self.name)
 
+    @staticmethod
+    def get_roles():
+        return Role.query.all()
+
     def __init__(
         self,
         name,
