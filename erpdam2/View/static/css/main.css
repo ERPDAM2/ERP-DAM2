@@ -1,6 +1,6 @@
 .fotoProducto{
     width: 99%;
-    height: 150;
+    height: 150px;
 }
 .columnaProductos{
     width: 50%;
@@ -11,4 +11,7 @@
     clear: both;
     content: "";
     display: table;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
