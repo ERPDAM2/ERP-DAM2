@@ -11,4 +11,7 @@
     clear: both;
     content: "";
     display: table;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
