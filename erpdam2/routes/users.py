@@ -1,4 +1,3 @@
-from turtle import title
 from flask import Blueprint, render_template, request
 from ..View.forms import RegisterForm
 
