@@ -25,15 +25,4 @@ def clientsMethod():
              last_name=form.last_name.data )
         
    
-             
-
-
-             
-
-
-         
-         
-    
-
-
-     return render_template("test.html", form=form, title="RegisterContact")
+     return render_template("test.html", form=form, title="RegisterClient")
