@@ -1,6 +1,9 @@
 # ERP-DAM2
 
 ## Rama Vista
+- [ ] Configuracion
+- [ ] Login
+- [ ] Productos
 
 ## Rama Controlador
 
