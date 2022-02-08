@@ -1,0 +1,15 @@
+
+.fotoProducto{
+    width: 99%;
+    height: 150;
+}
+.columnaProductos{
+    width: 50%;
+    float: left;
+    padding: 10px;
+}   
+.filaProductos:after{
+    clear: both;
+    content: "";
+    display: table;
+}

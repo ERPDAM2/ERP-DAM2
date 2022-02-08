@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
-    <ul>
-        {% for producto in productos %}
-            <li>{{ producto }}</li>
-        {% endfor %}
-    </ul>
+    {% for producto in productos %}
+    <div class="filaProductos">
+        <div class="columnaProductos" style="background-color:rgb(100, 0, 0);">
+            <img class="fotoProducto" src="https://picsum.photos/200/300" alt="Producto 1">
+            <p>{{ producto }}</p>
+            <p>10 €</p>
+            <p>Primer producto de prueba</p>
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}
