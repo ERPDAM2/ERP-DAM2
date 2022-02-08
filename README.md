@@ -1,14 +1,14 @@
+#ERP-DAM2
+
 ## Rama Vista
 
 ## Rama Controlador
 
 ## Rama Modelo
 
-### Modelos hechos
+### Modelos
 - [x] Usuarios
 - [x] Roles
-
-### Modelos en Progreso
 - [x] Contactos
 - [x] Transacciones
-- [ ] Producto
+- [x] Producto
