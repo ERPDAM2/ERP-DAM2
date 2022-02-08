@@ -4,6 +4,7 @@ from wtforms import PasswordField, StringField, SubmitField, ValidationError, In
 from wtforms.validators import DataRequired, Email, EqualTo, Length, NumberRange
 from erpdam2.models.user import User
 
+
 class RegisterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     username = StringField('Username', validators=[DataRequired()])
@@ -36,8 +37,21 @@ class LoginForm(FlaskForm):
 
 class RegisterSale(FlaskForm):
 
+    """Register Sales"""
     id_product = StringField("Id_Product", validators=[DataRequired()])
     id_provider = IntegerField("Id_Provider", validators=[DataRequired()])
     price = DecimalField("Price", validators=[DataRequired(), Length(max=8)])
     quantity = IntegerField("Quantity", validators=[DataRequired(), Length(10)])
     transaction_type = StringField("Transaction_Type", validators=[DataRequired()])
+
+class RegisterContact(FlaskForm):
+    """
+    Dar de alta contacto 2 
+    """
+    email = EmailField("Email", validators=[DataRequired(), Email(max=100)])
+    phone = IntegerField("Phone", validators=[DataRequired(), NumberRange(min=111111111,max=999999999)])
+    picture = StringField("Picture", validators=[length(max=255)])
+    address=StringField("Adress", validators=[length(max=250)])
+    company_name=StringField("Company_Name",validators=[DataRequired(),length(max=50)])
+    first_name=StringField("First_Name",validators=[DataRequired(),length(max=50)])
+    last_name=StringField("Last_Name",validators=[DataRequired(),length(max=50)])
