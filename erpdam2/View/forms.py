@@ -57,7 +57,7 @@ class RegisterContact(FlaskForm):
     """
     Dar de alta contacto 2 
     """
-    email = EmailField("Email", validators=[DataRequired(), Email(max=100)])
+    email = EmailField("Email", validators=[DataRequired(), Email()])
     phone = IntegerField("Phone", validators=[DataRequired(), NumberRange(min=111111111,max=999999999)])
     picture = StringField("Picture", validators=[Length(max=255)])
     address=StringField("Adress", validators=[Length(max=250)])

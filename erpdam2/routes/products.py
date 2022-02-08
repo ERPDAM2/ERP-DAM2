@@ -1,4 +1,3 @@
-
 from flask import Blueprint, render_template
 from erpdam2.View.forms import RegisterProduct
 from erpdam2.models.user import Product
@@ -16,4 +15,3 @@ def productsRoute():
     
     
     return render_template("testAltaProductos.html", form=form, title="Alta producto")
-
