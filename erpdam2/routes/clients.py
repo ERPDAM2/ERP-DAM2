@@ -4,5 +4,5 @@ clients = Blueprint("clients", __name__)
 
 
 @clients.route("/clients", methods=["GET", "POST"])
-def clientsRoute():
+def clientsMethod():
     return ""
