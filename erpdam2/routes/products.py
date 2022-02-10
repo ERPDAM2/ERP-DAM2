@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 from erpdam2.View.forms import RegisterProduct
-from erpdam2.models.user import Product
+from erpdam2.models.product import Product
 
 products = Blueprint("products", __name__)
 
@@ -15,18 +15,13 @@ def productsRoute():
     
     
     return render_template("testAltaProductos.html", form=form, title="Alta producto")
-<<<<<<< HEAD
-from turtle import title
-from flask import Blueprint, render_template
+
 from ..View.forms import RegisterSale
 
 products = Blueprint("products", __name__)
-
 
 @products.route("/sales", methods=["GET", "POST"])
 def sales():
     form = RegisterSale()
 
     return render_template("test.html", form=form, title="Sales")
-=======
->>>>>>> 36456b0318121f7b604e633fe5b162cd997a6ed4

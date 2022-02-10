@@ -1,11 +1,11 @@
 from audioop import add
 import email
 from flask import Blueprint
-from turtle import title
+#from turtle import title
 from flask import Blueprint, render_template, request,redirect,url_for
 from ..View.forms import RegisterContact
 from .. import db
-from . import auth
+#from . import auth
 from .. models import contact
 
 clients = Blueprint("clients", __name__)

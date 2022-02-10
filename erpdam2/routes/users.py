@@ -25,7 +25,7 @@ def login():
     return ""
 
 @users.route("/registerRole", methods=["GET", "POST"])
-def register():
-    form = RegisterRole
+def registerRole():
+    form = RegisterRole()
     
     return render_template("testAltaRol.html", form=form, title="Alta rol")

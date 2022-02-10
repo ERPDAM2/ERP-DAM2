@@ -1,0 +1,19 @@
+{% block title %}Alta rol{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+<hml>
+    {% block body %}
+    <head>
+        <title>App Flask</title>
+    </head>
+    <body>
+        <form method="GET">
+            {{form.id_role.label}}
+            {{form.id_role}}
+            <br/>
+            {{form.is_admin.label}}
+            {{form.is_admin}}
+        </form>
+    </body>
+    {% endblock %}
+</hml>
