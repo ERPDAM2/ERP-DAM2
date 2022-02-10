@@ -22,7 +22,7 @@ class Role(db.Model):
         self,
         name,
         description,
-        is_admin,
+        is_admin=False,
     ):
         self.name = name
         self.description = description
