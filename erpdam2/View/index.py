@@ -1,6 +1,18 @@
 #! /usr/bin/env python
 # vim: ft=python fileencoding=utf-8 sts=4 sw=4 et:
 # -*- coding: utf-8 -*-
+import json
+file = open('countries.json', 'r')
+data = file.read()
+
+countries = json.loads(data)
+
+countriesCode = []
+countriesName = []
+
+for i in countries:   
+    countriesCode+= i['alpha2'].split('\n')
+    countriesName += i['name'].split('\n')
 
 from flask import Flask, render_template, redirect, url_for
 
@@ -32,7 +44,7 @@ def productos():
 
 @index.route("/configuration")
 def configuration():
-    return render_template("configuration.html")
+    return render_template("configuration.html", paises=countriesName)
 
 @index.route("/createuser")
 def create_user():
