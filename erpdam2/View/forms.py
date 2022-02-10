@@ -1,6 +1,6 @@
 from wsgiref import validate
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField
+from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField, EmailField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, NumberRange
 from erpdam2.models.user import User
 
@@ -43,7 +43,6 @@ class RegisterSale(FlaskForm):
     price = DecimalField("Price", validators=[DataRequired(), Length(max=8)])
     quantity = IntegerField("Quantity", validators=[DataRequired(), Length(10)])
     transaction_type = StringField("Transaction_Type", validators=[DataRequired()])
-<<<<<<< HEAD
     
 class RegisterProduct(FlaskForm):
     id_product = IntegerField('ID', validators=[DataRequired(),NumberRange(min=1)])
@@ -53,7 +52,6 @@ class RegisterProduct(FlaskForm):
     price = DecimalField('Precio', validators=[DataRequired(),NumberRange(min=0.1)])
     picture = StringField('Descripción', validators=[DataRequired(), Length(max=255)])
     submit = SubmitField('Insertar')
-=======
 
 class RegisterContact(FlaskForm):
     """
@@ -61,9 +59,8 @@ class RegisterContact(FlaskForm):
     """
     email = EmailField("Email", validators=[DataRequired(), Email(max=100)])
     phone = IntegerField("Phone", validators=[DataRequired(), NumberRange(min=111111111,max=999999999)])
-    picture = StringField("Picture", validators=[length(max=255)])
-    address=StringField("Adress", validators=[length(max=250)])
-    company_name=StringField("Company_Name",validators=[DataRequired(),length(max=50)])
-    first_name=StringField("First_Name",validators=[DataRequired(),length(max=50)])
-    last_name=StringField("Last_Name",validators=[DataRequired(),length(max=50)])
->>>>>>> b88b761919efcb9365cf6bb24ead0fb2ce1e0f38
+    picture = StringField("Picture", validators=[Length(max=255)])
+    address=StringField("Adress", validators=[Length(max=250)])
+    company_name=StringField("Company_Name",validators=[DataRequired(),Length(max=50)])
+    first_name=StringField("First_Name",validators=[DataRequired(),Length(max=50)])
+    last_name=StringField("Last_Name",validators=[DataRequired(),Length(max=50)])
