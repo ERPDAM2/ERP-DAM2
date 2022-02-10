@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from ..View.forms import RegisterForm
+from erpdam2.View.forms import RegisterForm
 
 users = Blueprint("users", __name__)
 
@@ -15,3 +15,4 @@ def register():
 @users.route("/login", methods=["GET", "POST"])
 def login():
     return ""
+

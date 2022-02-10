@@ -7,12 +7,15 @@
         <title>App Flask</title>
     </head>
     <body>
-        <form method="GET">
+        <form method="POST">
             {{form.email.label}}
             {{form.email}}
             <br/>
             {{form.username.label}}
             {{form.username}}
+            <br/>
+            {{form.validate_email(form.email)}}
+            {{form.submit}}
         </form>
     </body>
     {% endblock %}
