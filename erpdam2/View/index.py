@@ -16,7 +16,7 @@ for i in countries:
 
 from flask import Flask, render_template, redirect, url_for
 
-productosPlaceholder = ["Producto1", "Producto2", "Producto3", "Producto4", "Producto5"]
+productosPlaceholder = ["Producto1", "Producto2", "Producto3 ", "Producto4", "Producto5"]
 
 #authorized = False
 authorized = True
