@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="{{url_for('static', filename='css/configuration.css')}}"/>
     </head>
     <body>
-      <div style="text-align: center;">
-        <div style="display: inline-block; text-align: left;">
+      <div id="div_principal" style="text-align: center;">
+        <div id="div_display" style="display: inline-block; text-align: left;">
         <form>
             <!-- Company configuration form -->
             <label for="legalName">Legal Name</label><br>
@@ -15,8 +15,44 @@
             <h4>General Information</h4>
             <label for="contact">Contact</label>
             <a href="#" onclick="contactLink">My Company Name</a><br>
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Address"><br>
+            <!--<label for="address">Address</label>-->
+
+            <div class="form-group">
+              <label for="address">Address</label>
+              <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Address">
+                <label for="floatingInput">Address</label>
+              </div>
+              <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Address2">
+                <label for="floatingInput">Address2</label>
+              </div>
+              <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingInput" placeholder="City">
+                <label for="floatingInput">City</label>
+              </div>
+              <div class="form-floating mb-1">
+                <select name="city" id="city">
+                  <option value="city1">City1</option>
+                  <option value="city2">City2</option>
+                  <option value="city3">City3</option>
+                </select>
+              </div>
+              <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Postal Code">
+                <label for="floatingInput">Postal Code</label>
+              </div>
+              <div class="form-floating mb-1">
+                  <select id="country" name="country">
+                    <option>Country</option>
+                    {% for p in paises %}
+                    <option value="AF">{{ p }}</option>
+                    {% endfor %}
+                </select>
+              </div>
+            </div>
+
+            <!--<input type="text" id="address" name="address" placeholder="Address"><br>
             <input type="text" id="address2" name="address2" placeholder="Address 2"><br>
             <input type="text" id="city" name="city" placeholder="City">
             <select name="city" id="city">
@@ -25,13 +61,7 @@
                 <option value="city3">City3</option>
               </select>
             <input type="text" id="pc" name="pc" placeholder="Postal Code"><br>
-            <select id="country" name="country">
-                <option>Country</option>
-                {% for p in paises %}
-                <option value="AF">{{ p }}</option>
-                {% endfor %}
-            </select>
-            <br>
+            <br>-->
             <label for="telephone">Telephone</label>
             <input type="tel" id="telephone" name="telephone" placeholder="900102030"><br>
             <label for="email">Email</label>
