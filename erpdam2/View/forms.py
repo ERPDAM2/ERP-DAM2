@@ -1,6 +1,6 @@
 from wsgiref import validate
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField
+from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField, EmailField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, NumberRange
 from erpdam2.models.user import User
 
@@ -50,8 +50,8 @@ class RegisterContact(FlaskForm):
     """
     email = EmailField("Email", validators=[DataRequired(), Email(max=100)])
     phone = IntegerField("Phone", validators=[DataRequired(), NumberRange(min=111111111,max=999999999)])
-    picture = StringField("Picture", validators=[length(max=255)])
-    address=StringField("Adress", validators=[length(max=250)])
-    company_name=StringField("Company_Name",validators=[DataRequired(),length(max=50)])
-    first_name=StringField("First_Name",validators=[DataRequired(),length(max=50)])
-    last_name=StringField("Last_Name",validators=[DataRequired(),length(max=50)])
+    picture = StringField("Picture", validators=[Length(max=255)])
+    address=StringField("Adress", validators=[Length(max=250)])
+    company_name=StringField("Company_Name",validators=[DataRequired(),Length(max=50)])
+    first_name=StringField("First_Name",validators=[DataRequired(),Length(max=50)])
+    last_name=StringField("Last_Name",validators=[DataRequired(),Length(max=50)])
