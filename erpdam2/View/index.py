@@ -33,6 +33,14 @@ def productos():
 def configuration():
     return render_template("configuration.html")
 
+@index.route("/createuser")
+def create_user():
+    return render_template("create_user.html")
+
 
 if __name__ == "__main__":
     index.run(port=3000, debug=True)
+   
+    
+
+
