@@ -75,6 +75,6 @@ class RegisterRole(FlaskForm):
     id_role = IntegerField('ID', validators=[DataRequired(),NumberRange(min=1)])
     name_role = StringField('Nombre', validators=[DataRequired(), Length(max=60)])
     description = StringField('Descripción', validators=[DataRequired(), Length(max=200)])
-    is_admin = SelectField(u'Administrador',choices=[('1', 'Sí'), ('2', 'No')],validators=DataRequired())
+    is_admin = SelectField(u'Administrador',choices=[('1', 'Sí'), ('2', 'No')])
     username = StringField('Nombre de usuario', validators=[DataRequired(), Length(max=60)])
     submit = SubmitField('Insertar')    
