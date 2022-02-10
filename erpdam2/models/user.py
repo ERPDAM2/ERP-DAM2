@@ -45,10 +45,6 @@ class User(UserMixin, BaseClass):
     def is_admin(self) -> bool:
         return self.role.is_admin
 
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
     def __init__(self, email, username, first_name, last_name, password, role_id=1):
         self.email = email
         self.username = username
