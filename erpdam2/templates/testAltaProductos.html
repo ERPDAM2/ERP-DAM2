@@ -1,0 +1,19 @@
+{% block title %}Alta producto{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+<hml>
+    {% block body %}
+    <head>
+        <title>App Flask</title>
+    </head>
+    <body>
+        <form method="GET">
+            {{form.id_product.label}}
+            {{form.id_product}}
+            <br/>
+            {{form.name_product.label}}
+            {{form.name_product}}
+        </form>
+    </body>
+    {% endblock %}
+</hml>
