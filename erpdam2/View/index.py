@@ -34,8 +34,12 @@ def configuration():
     return render_template("configuration.html")
 
 @index.route("/clients")
-def configuration2():
+def configurationClients():
     return render_template("clients.html")
+
+@index.route("/addClients")
+def configurationAddClients():
+    return render_template("addClients.html")
 
 if __name__ == "__main__":
     index.run(port=3000, debug=True)
