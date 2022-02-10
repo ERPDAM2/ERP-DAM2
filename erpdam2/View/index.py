@@ -37,6 +37,9 @@ def configuration():
 def create_user():
     return render_template("create_user.html")
 
+@index.route("/clients")
+def configuration2():
+    return render_template("clients.html")
 
 if __name__ == "__main__":
     index.run(port=3000, debug=True)
