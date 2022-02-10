@@ -1,19 +1,32 @@
 #! /usr/bin/env python
 # vim: ft=python fileencoding=utf-8 sts=4 sw=4 et:
 # -*- coding: utf-8 -*-
+import json
+file = open('countries.json', 'r')
+data = file.read()
+
+countries = json.loads(data)
+
+countriesCode = []
+countriesName = []
+
+for i in countries:   
+    countriesCode+= i['alpha2'].split('\n')
+    countriesName += i['name'].split('\n')
 
 from flask import Flask, render_template, redirect, url_for
 
 productosPlaceholder = ["Producto1", "Producto2", "Producto3", "Producto4", "Producto5"]
 
-# authorized = True
+#authorized = False
+authorized = True
 
 index = Flask(__name__)
 
 
 @index.route("/")
 def Index():
-    return render_template("index.html")
+    return render_template("index.html", auth=authorized)
 
 
 @index.route("/validator", methods=["POST"])
@@ -31,7 +44,11 @@ def productos():
 
 @index.route("/configuration")
 def configuration():
-    return render_template("configuration.html")
+    return render_template("configuration.html", paises=countriesName)
+
+@index.route("/createuser")
+def create_user():
+    return render_template("create_user.html")
 
 @index.route("/clients")
 def configurationClients():
@@ -43,3 +60,7 @@ def configurationAddClients():
 
 if __name__ == "__main__":
     index.run(port=3000, debug=True)
+   
+    
+
+
