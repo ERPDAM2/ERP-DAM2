@@ -1,10 +1,12 @@
-
+{% extends "layout.html" %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Create user</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/create_user.css')}}">
     </head>
+    {% block body %}
     <body>
         <div>
             <form style="border:1px solid #ccc">
@@ -40,14 +42,9 @@
                   </div>
                 </div>
               </form> 
-
-
         </div>
-
     </body>
-    
-
-
+    {% endblock %}
 </html>
 
 

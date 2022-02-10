@@ -1,4 +1,5 @@
-[{"id":4,"alpha2":"af","alpha3":"afg","name":"Afganistán"},
+[
+  {"id":4,"alpha2":"af","alpha3":"afg","name":"Afganistán"},
   {"id":248,"alpha2":"ax","alpha3":"ala","name":"Åland"},
   {"id":8,"alpha2":"al","alpha3":"alb","name":"Albania"},
   {"id":276,"alpha2":"de","alpha3":"deu","name":"Alemania"},
@@ -246,4 +247,5 @@
   {"id":887,"alpha2":"ye","alpha3":"yem","name":"Yemen"},
   {"id":262,"alpha2":"dj","alpha3":"dji","name":"Yibuti"},
   {"id":894,"alpha2":"zm","alpha3":"zmb","name":"Zambia"},
-  {"id":716,"alpha2":"zw","alpha3":"zwe","name":"Zimbabue"}]
+  {"id":716,"alpha2":"zw","alpha3":"zwe","name":"Zimbabue"}
+]
