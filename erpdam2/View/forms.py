@@ -73,7 +73,7 @@ class RegisterRole(FlaskForm):
     Registro de rol
     """     
     id_role = IntegerField('ID', validators=[DataRequired(),NumberRange(min=1)])
-    name_role = StringField('Nombre', validators=[DataRequired(), Length(max=60)])
+    name_role = StringField('Nombre', validators=[DataRequired(), Length(max=60,message='La longitud máxima es de 60 caracteres')])
     description = StringField('Descripción', validators=[DataRequired(), Length(max=200)])
     is_admin = SelectField(u'Administrador',choices=[(True, 'Sí'), (False, 'No')])
     username = StringField('Nombre de usuario', validators=[DataRequired(), Length(max=60)])
