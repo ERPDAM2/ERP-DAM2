@@ -2,7 +2,7 @@
 # vim: ft=python fileencoding=utf-8 sts=4 sw=4 et:
 # -*- coding: utf-8 -*-
 import json
-file = open('countries.json', 'r')
+file = open('static/json/countries.json', 'r')
 data = file.read()
 
 countries = json.loads(data)
