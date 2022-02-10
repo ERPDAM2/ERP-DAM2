@@ -33,6 +33,9 @@ def productos():
 def configuration():
     return render_template("configuration.html")
 
+@index.route("/clients")
+def configuration2():
+    return render_template("clients.html")
 
 if __name__ == "__main__":
     index.run(port=3000, debug=True)
