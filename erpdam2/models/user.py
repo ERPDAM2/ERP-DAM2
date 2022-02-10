@@ -33,11 +33,13 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return "<User: {}>".format(self.username)
 
-    def username_exists(self) -> bool:
-        return User.filter_by(email=self.email).first() is not None
+    @staticmethod
+    def username_exists(email) -> bool:
+        return User.query.filter_by(email=email).first() is not None
 
-    def email_exists(self) -> bool:
-        return User.filter_by(username=self.username).first() is not None
+    @staticmethod
+    def email_exists(username) -> bool:
+        return User.query.filter_by(username=username).first() is not None
 
     def is_admin(self) -> bool:
         return self.role.is_admin
