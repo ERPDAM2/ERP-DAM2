@@ -1,7 +1,8 @@
 from erpdam2 import db
+from erpdam2.models import BaseClass
 
 
-class Product(db.Model):
+class Product(BaseClass):
     __tablename__ = "products"
 
     id = db.Column(db.Integer, primary_key=True)

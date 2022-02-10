@@ -1,3 +1,4 @@
+from erpdam2.models.BasicMethods import BasicMethods as BaseClass
 from erpdam2.models.contact import Contact
 from erpdam2.models.role import Role
 from erpdam2.models.transaction import Transaction

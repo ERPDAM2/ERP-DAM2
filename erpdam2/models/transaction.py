@@ -1,8 +1,9 @@
 from erpdam2 import db
 import datetime
+from erpdam2.models import BaseClass
 
 
-class Transaction(db.Model):
+class Transaction(BaseClass):
     __tablename__ = "transactions"
 
     id = db.Column(db.Integer, primary_key=True)

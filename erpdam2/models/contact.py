@@ -1,7 +1,8 @@
 from erpdam2 import db
+from erpdam2.models import BaseClass
 
 
-class Contact(db.Model):
+class Contact(BaseClass):
     __tablename__ = "contacts"
 
     id = db.Column(db.Integer, primary_key=True)

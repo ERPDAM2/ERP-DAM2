@@ -2,9 +2,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from erpdam2 import db, login_manager
 from flask_login import UserMixin
+from erpdam2.models import BaseClass
 
 
-class User(UserMixin, db.Model):
+class User(UserMixin, BaseClass):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
