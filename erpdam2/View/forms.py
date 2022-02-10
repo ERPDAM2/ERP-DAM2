@@ -43,6 +43,15 @@ class RegisterSale(FlaskForm):
     price = DecimalField("Price", validators=[DataRequired(), Length(max=8)])
     quantity = IntegerField("Quantity", validators=[DataRequired(), Length(10)])
     transaction_type = StringField("Transaction_Type", validators=[DataRequired()])
+    
+class RegisterProduct(FlaskForm):
+    id_product = IntegerField('ID', validators=[DataRequired(),NumberRange(min=1)])
+    name_product = StringField('Nombre', validators=[DataRequired(), Length(max=60)])
+    description = StringField('Descripción', validators=[DataRequired(), Length(max=200)])
+    quantity = IntegerField('Cantidad', validators=[DataRequired(),NumberRange(min=1)])
+    price = DecimalField('Precio', validators=[DataRequired(),NumberRange(min=0.1)])
+    picture = StringField('Descripción', validators=[DataRequired(), Length(max=255)])
+    submit = SubmitField('Insertar')
 
 class RegisterContact(FlaskForm):
     """
