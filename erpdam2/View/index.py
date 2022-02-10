@@ -6,14 +6,15 @@ from flask import Flask, render_template, redirect, url_for
 
 productosPlaceholder = ["Producto1", "Producto2", "Producto3", "Producto4", "Producto5"]
 
-# authorized = True
+#authorized = False
+authorized = True
 
 index = Flask(__name__)
 
 
 @index.route("/")
 def Index():
-    return render_template("index.html")
+    return render_template("index.html", auth=authorized)
 
 
 @index.route("/validator", methods=["POST"])
