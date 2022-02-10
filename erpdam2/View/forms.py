@@ -1,6 +1,6 @@
 from wsgiref import validate
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField, EmailField
+from wtforms import PasswordField, StringField, SubmitField, ValidationError, IntegerField, DecimalField, EmailField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, NumberRange
 from erpdam2.models.user import User
 
@@ -45,6 +45,9 @@ class RegisterSale(FlaskForm):
     transaction_type = StringField("Transaction_Type", validators=[DataRequired()])
     
 class RegisterProduct(FlaskForm):
+    """
+    Registro de producto
+    """     
     id_product = IntegerField('ID', validators=[DataRequired(),NumberRange(min=1)])
     name_product = StringField('Nombre', validators=[DataRequired(), Length(max=60)])
     description = StringField('Descripción', validators=[DataRequired(), Length(max=200)])
@@ -64,3 +67,14 @@ class RegisterContact(FlaskForm):
     company_name=StringField("Company_Name",validators=[DataRequired(),Length(max=50)])
     first_name=StringField("First_Name",validators=[DataRequired(),Length(max=50)])
     last_name=StringField("Last_Name",validators=[DataRequired(),Length(max=50)])
+    
+class RegisterRole(FlaskForm):
+    """
+    Registro de rol
+    """     
+    id_role = IntegerField('ID', validators=[DataRequired(),NumberRange(min=1)])
+    name_role = StringField('Nombre', validators=[DataRequired(), Length(max=60)])
+    description = StringField('Descripción', validators=[DataRequired(), Length(max=200)])
+    is_admin = SelectField(u'Administrador',choices=[('1', 'Sí'), ('2', 'No')],validators=DataRequired())
+    username = StringField('Nombre de usuario', validators=[DataRequired(), Length(max=60)])
+    submit = SubmitField('Insertar')    
