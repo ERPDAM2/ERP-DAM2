@@ -33,8 +33,14 @@ button {
   resize: vertical;
 }
 
+/* Resize div display, Default = Comment the div below */
+div[id="div_display"] {
+  resize: vertical;
+  width: 40%;
+}
+
 input[type=submit]:hover {
-  background-color: #8b34bd;
+  background-color: #ced6d6;
 }
 
 .container {
