@@ -1,6 +1,7 @@
 
 from flask import Blueprint, render_template, request
 from erpdam2.View.forms import RegisterForm, RegisterRole
+from erpdam2.models.role import Role
 from erpdam2.models.user import User
 
 users = Blueprint("users", __name__)
@@ -27,5 +28,10 @@ def login():
 @users.route("/registerRole", methods=["GET", "POST"])
 def registerRole():
     form = RegisterRole()
+    
+    if(form.validate_on_submit()):
+        role = Role(id=form.id_role.data, name=form.name_role.data, 
+                    description=form.description.data, is_admin= form.is_admin.data,
+                    users=form.username.data)
     
     return render_template("testAltaRol.html", form=form, title="Alta rol")
